@@ -2,7 +2,10 @@ fn print_elements(elements: &Vec<String>) {
     // for element in elements {
     //     println!("{}", element);
     // }
-    elements.iter().for_each(|el| println!("{:#?}", el));
+    elements
+        .iter()
+        .map(|el| format!("{} {}", el, el))
+        .for_each(|el| println!("{}", el));
 }
 
 fn main() {
