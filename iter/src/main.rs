@@ -34,12 +34,19 @@ fn find_color_or(elements: &[String], search: &str, fallback: &str) -> String {
         .map_or(String::from(fallback), |el| el.to_string())
 }
 
+fn first_score(scores: &[u32]) -> Option<u32> {
+    scores.first().copied()
+}
+
 fn main() {
     let colors = vec![
         String::from("red"),
         String::from("blue"),
         String::from("green"),
     ];
+
+    let scores = first_score(&[]);
+    println!("{:#?}", scores);
 
     // print_elements(&colors);
     // shorten_strings(&mut colors[1..3]);
